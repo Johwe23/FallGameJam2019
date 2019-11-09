@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         
-        if(movement.sqrMagnitude > 0){
+        if(movement.sqrMagnitude > 0.05){
             transform.rotation = Quaternion.LookRotation(movement);
         }
     }
