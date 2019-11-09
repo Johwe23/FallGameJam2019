@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1267434832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142636027957399736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4aef85d2c235a24c9018cf8c9a4c9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petal: {fileID: 1302067057526655395, guid: 5d1549b1f371bbb4eada968910962847, type: 3}
+  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &5765511144379742200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15,17 +29,17 @@ PrefabInstance:
     - target: {fileID: 5427948743174369420, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.806288
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: 5427948743174369420, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.499014
+      value: 1.38199985e-17
       objectReference: {fileID: 0}
     - target: {fileID: 5427948743174369420, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.780657
+      value: 5.015518
       objectReference: {fileID: 0}
     - target: {fileID: 5427948743174369420, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
@@ -67,26 +81,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3009847345702760937, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_Name
-      value: Mesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 1787970717314293154, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1787970717314293154, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1787970717314293154, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8220713427552316508, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_Mesh
@@ -100,3 +94,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 14605c2f920412540b47876d392c3bbe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681d25427f0790741aeb525352570ed1, type: 3}
+--- !u!1 &9142636027957399736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3378296556302739264, guid: 681d25427f0790741aeb525352570ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5765511144379742200}
+  m_PrefabAsset: {fileID: 0}
