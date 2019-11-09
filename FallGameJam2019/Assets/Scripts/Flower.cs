@@ -58,4 +58,21 @@ public class Flower : MonoBehaviour
         p.GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
         p.transform.parent = gameObject.transform;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Entering");
+        /*if (other.gameObject.tag == "Compost" && other.gameObject.GetComponent<Renderer>().material.color == color) {
+            print("Destroy");
+            upgrade();
+            Destroy(other.gameObject);
+        }*/
+        if (other.gameObject.tag == "Compost") {
+            print("It's Compost");
+        }
+
+        if (other.gameObject.GetComponent<Renderer>().material.color == color) {
+            print("Correct color");
+        }
+    }
 }
