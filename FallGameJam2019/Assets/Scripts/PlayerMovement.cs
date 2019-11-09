@@ -21,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw ("Horizontal");
         float moveVertical = Input.GetAxisRaw ("Vertical");
 
-        control.SimpleMove(new Vector3(speed * moveHorizontal, 0, speed * moveVertical));
-
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        control.SimpleMove(speed * movement.normalized);
         
         if(movement.sqrMagnitude > 0){
             transform.rotation = Quaternion.LookRotation(movement);
