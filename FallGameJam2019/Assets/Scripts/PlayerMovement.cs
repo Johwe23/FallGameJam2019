@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxisRaw ("Horizontal");
-        float moveVertical = Input.GetAxisRaw ("Vertical");
+        float moveHorizontal = Input.GetAxisRaw("P1Horizontal");
+        float moveVertical = Input.GetAxisRaw("P1Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
@@ -28,5 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if(movement.sqrMagnitude > 0){
             transform.rotation = Quaternion.LookRotation(movement);
         }
+
+        print(Input.GetButton("P1Interact"));
     }
 }
