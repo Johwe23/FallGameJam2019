@@ -173,6 +173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupRange: 1
   Petal: {fileID: 1302067057526655395, guid: 5d1549b1f371bbb4eada968910962847, type: 3}
-  PetalTruck: {fileID: 2272083673370379170, guid: 69abe57b27c9b74408148c8c6979228f,
+  PetalTruck: {fileID: 3355526237874089139, guid: 69abe57b27c9b74408148c8c6979228f,
+    type: 3}
+  Compost: {fileID: 8477210812598919950, guid: 695ce63ddedd74d4f8633431840a073d, type: 3}
+  CompostTruck: {fileID: 554430066632872308, guid: 342488aa268c30945867d22619e1e24d,
     type: 3}
   PlayerNumber: 1
