@@ -14,6 +14,7 @@ public class Interaction : MonoBehaviour
     public GameObject Compost;
     public GameObject CompostTruck;
     private GameObject child = null;
+    private Color colorOfPickup;
     private GameObject petal;
     private GameObject compost;
     public string PlayerNumber;
@@ -58,7 +59,9 @@ public class Interaction : MonoBehaviour
                     if ((closestPetal.transform.position - transform.position).sqrMagnitude < pickupRange)
                     {
                         Destroy(closestPetal);
+                        colorOfPickup = closestPetal.GetComponentInChildren<Renderer>().material.color;
                         child = Instantiate(PetalTruck, transform);
+                        child.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                     }
                 }
                 else
@@ -66,7 +69,9 @@ public class Interaction : MonoBehaviour
                     if ((closestCompost.transform.position - transform.position).sqrMagnitude < pickupRange)
                     {
                         Destroy(closestCompost);
+                        colorOfPickup = closestCompost.GetComponentInChildren<Renderer>().material.color;
                         child = Instantiate(CompostTruck, transform);
+                        child.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                     }
 
                 }
@@ -78,12 +83,14 @@ public class Interaction : MonoBehaviour
                     Destroy(child);
                     petal = Instantiate(Petal);
                     petal.transform.position = transform.position;
+                    petal.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                 }
                 else if (child.tag == "Compost")
                 {
                     Destroy(child);
                     compost = Instantiate(Compost);
                     compost.transform.position = transform.position;
+                    compost.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                 }
             }
         }
