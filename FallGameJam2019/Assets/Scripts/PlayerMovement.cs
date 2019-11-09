@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController control;
+    //public Plane other;
     public float speed;
     public string PlayerNumber;
 
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //other.move(1);                                                                               //#########################################
     }
 
     // Update is called once per frame
@@ -24,8 +25,15 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        control.SimpleMove(speed * movement.normalized);
-        
+        if ((transform.position.x < Plane.offset) && PlayerNumber == "1"){              // slow on right
+            control.SimpleMove(speed * movement.normalized);
+        } else if ((transform.position.x > Plane.offset) && PlayerNumber == "2") {      // slow on left
+            control.SimpleMove(speed * movement.normalized);
+        } else {
+            control.SimpleMove(0.5f * speed * movement.normalized);
+        }
+        print("Plane offset: " + Plane.offset);
+
         if(movement.sqrMagnitude > 0){
             transform.rotation = Quaternion.LookRotation(movement);
         }

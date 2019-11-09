@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plane : MonoBehaviour
 {
-    public float offset = 0;
+    public static float offset = 0;
 
     void Start()
     {
@@ -13,7 +13,12 @@ public class Plane : MonoBehaviour
 
     void Update()
     {
+        /*
         //move(0.5f - Random.value);
+        if (Input.GetButtonDown("P1Interact")) {
+            move(1);
+        }
+        */
     }
 
     public void move(float dist)
