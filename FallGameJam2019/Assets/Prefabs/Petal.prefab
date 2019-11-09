@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5613392584232295610}
   - component: {fileID: 1116125115084710885}
   m_Layer: 0
-  m_Name: Petal 2
-  m_TagString: Untagged
+  m_Name: Petal
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302067057526655395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.32649708, y: -4.311081, z: 11.2857}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7057299408905158768}

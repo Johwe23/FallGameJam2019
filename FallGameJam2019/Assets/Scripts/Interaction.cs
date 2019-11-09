@@ -10,10 +10,9 @@ public class Interaction : MonoBehaviour
     public float pickupRange;
     public GameObject Petal;
     public GameObject PetalTruck;
-    public GameObject Scene;
     private GameObject child = null;
     private GameObject petal;
-
+    public string PlayerNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,7 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("P"+PlayerNumber+"Interact")){
             if (child == null)
             {
                 interactables = GameObject.FindGameObjectsWithTag("Interactable");

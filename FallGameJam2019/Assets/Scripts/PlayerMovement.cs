@@ -29,7 +29,5 @@ public class PlayerMovement : MonoBehaviour
         if(movement.sqrMagnitude > 0){
             transform.rotation = Quaternion.LookRotation(movement);
         }
-
-        print(Input.GetButton("P" + PlayerNumber + "Interact"));
     }
 }
