@@ -136,3 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97eff948b93fd84a8930936667eade4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CountDownTime: 5
+  timer: 0
+  compost: {fileID: 2018642101411274565, guid: 0ffe739abcbb4b543899499e13e0c48f, type: 3}
