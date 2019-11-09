@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Plane : MonoBehaviour
 {
-
-    float offset = 0;
-    Renderer rend;
+    public float offset = 0;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        
     }
 
     void Update()
     {
-        rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        //move(0.5f - Random.value);
     }
 
     public void move(float dist)
     {
         offset += dist;
+        transform.Translate(dist, 0, 0);
     }
+    
 }
