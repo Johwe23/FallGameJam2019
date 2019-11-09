@@ -87,6 +87,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5427948743174369420}
+  - component: {fileID: 1679611746614821920}
+  - component: {fileID: 5874022337594065812}
   m_Layer: 0
   m_Name: Truck_Snow
   m_TagString: Untagged
@@ -109,3 +111,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679611746614821920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378296556302739264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd8fcc71b42fcb47a719b29b7d9b251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  speed: 0
+  PlayerNumber: 2
+--- !u!114 &5874022337594065812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378296556302739264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b1bf1c618589143b06a6e7cec0c882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 1
+  Petal: {fileID: 1302067057526655395, guid: 5d1549b1f371bbb4eada968910962847, type: 3}
+  PetalTruck: {fileID: 2272083673370379170, guid: 69abe57b27c9b74408148c8c6979228f,
+    type: 3}
+  PlayerNumber: 2
