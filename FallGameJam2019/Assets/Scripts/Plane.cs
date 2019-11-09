@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Plane : MonoBehaviour
 {
+    public Text score;
     public static float offset = 0;
 
     void Start()
@@ -13,12 +15,13 @@ public class Plane : MonoBehaviour
 
     void Update()
     {
-        /*
-        //move(0.5f - Random.value);
+        score.text = "Offset: " + offset;
+        
         if (Input.GetButtonDown("P1Interact")) {
             move(1);
+        } else if (Input.GetButtonDown("P2Interact")) {
+            move(-1);
         }
-        */
     }
 
     public void move(float dist)
