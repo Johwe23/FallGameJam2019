@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Compost
       objectReference: {fileID: 0}
+    - target: {fileID: 3378296556302739264, guid: 681d25427f0790741aeb525352570ed1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 5427948743174369420, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_LocalPosition.x
