@@ -6,7 +6,7 @@ public class Composter : MonoBehaviour
 {
     List<GameObject> petals = new List<GameObject>();
 
-    public double CountDownTime = 5;
+    public double CountDownTime = 10;
     public double timer = -1;
 
     public GameObject compost;
@@ -30,13 +30,10 @@ public class Composter : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        print(petals.Count);
-
     }
 
     private void OnTriggerEnter(Collider other){
         petals.Add(other.gameObject);
-        print("Making compost...");
 
         if(petals.Count == 1){
             timer = CountDownTime;
@@ -48,12 +45,35 @@ public class Composter : MonoBehaviour
     }
 
     private void makeCompost(){
-        print("Compost made");
+
+
+        GameObject c = Instantiate(compost, transform.position + new Vector3(0.9f, 0.074f, -0.855f), new Quaternion(0, 0, 0, 1));
+
+        Color color1 = petals[0].GetComponentInChildren<Renderer>().material.color;
+        Color cColor = color1;
+
+        if(petals.Count > 1){
+            
+            Color color2 = petals[1].GetComponentInChildren<Renderer>().material.color;
+
+            
+            if(color1 == Color.blue && color2 == Color.red || color2 == Color.blue && color1 == Color.red){
+                cColor = new Color(136, 3, 252);
+            }
+            else if(color1 == Color.yellow && color2 == Color.red || color2 == Color.yellow && color1 == Color.red){
+                cColor = new Color(252, 152, 3);
+            }
+            else if(color1 == Color.yellow && color2 == Color.blue || color2 == Color.yellow && color1 == Color.blue){
+                cColor = Color.green;
+            }
+        }
+        c.GetComponentInChildren<Renderer>().material.color = cColor;
+
 
         for(int i = 0; i < petals.Count; i++){
             GameObject.Destroy(petals[i]);
         }
 
-        Instantiate(compost, transform.position + new Vector3(0.9f, 0.074f, -0.855f), new Quaternion(0, 0, 0, 1));
+        
     }
 }

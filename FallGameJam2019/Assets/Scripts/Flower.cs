@@ -13,7 +13,7 @@ public class Flower : MonoBehaviour
     int maxDropppedPetals = 8;
 
     
-    double minimumWaitTime = 10, subractWaitTimePerLevel = 2;
+    double minimumWaitTime = 5, subractWaitTimePerLevel = 2;
     double secondsUntilDropsPetal;
     float nextDropAngle = 0;
     float dropDistance = 0.5f;
@@ -36,6 +36,7 @@ public class Flower : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(0, nextDropAngle/(2* Mathf.PI)*360 - 90, 0);
 
             var p = Instantiate(petal, transform.position + new Vector3(Mathf.Sin(nextDropAngle)*dropDistance, 0, Mathf.Cos(nextDropAngle)*dropDistance), rotation);
+            
             p.GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
             p.transform.parent = gameObject.transform;
 
@@ -53,6 +54,7 @@ public class Flower : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, angle, 0);
         
         var p = Instantiate(petal, transform.position + new Vector3(0, 0.5f, 0), rotation);
+        p.gameObject.tag = "Untagged";
         p.GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
         p.transform.parent = gameObject.transform;
     }

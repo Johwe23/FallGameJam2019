@@ -11,6 +11,7 @@ public class Interaction : MonoBehaviour
     public GameObject Petal;
     public GameObject PetalTruck;
     private GameObject child = null;
+    private Color colorOfPickup;
     private GameObject petal;
     public string PlayerNumber;
     // Start is called before the first frame update
@@ -25,7 +26,7 @@ public class Interaction : MonoBehaviour
         if (Input.GetButtonDown("P"+PlayerNumber+"Interact")){
             if (child == null)
             {
-                interactables = GameObject.FindGameObjectsWithTag("Interactable");
+                interactables = GameObject.FindGameObjectsWithTag("Petal");
 
                 closest = interactables[0];
 
@@ -39,12 +40,17 @@ public class Interaction : MonoBehaviour
                 if ((closest.transform.position - transform.position).sqrMagnitude < pickupRange)
                 {
                     Destroy(closest);
+                    print("1");
+                    colorOfPickup = closest.GetComponentInChildren<Renderer>().material.color;
+                    print("2");
                     child = Instantiate(PetalTruck, transform);
+                    child.GetComponentInChildren<Renderer>().material.SetColor("_Color", colorOfPickup);
                 }
             }
             else {
                 Destroy(child);
                 petal = Instantiate(Petal);
+                petal.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                 petal.transform.position = transform.position;
             }
         }
