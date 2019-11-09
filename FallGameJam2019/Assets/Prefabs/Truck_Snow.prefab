@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3009847345702760937}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5427948743174369420}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8220713427552316508
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89,8 +89,6 @@ GameObject:
   - component: {fileID: 5427948743174369420}
   - component: {fileID: 1679611746614821920}
   - component: {fileID: 5874022337594065812}
-  - component: {fileID: -3914852655078246279}
-  - component: {fileID: 1881511523346346799}
   m_Layer: 0
   m_Name: Truck_Snow
   m_TagString: Untagged
@@ -125,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd8fcc71b42fcb47a719b29b7d9b251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  control: {fileID: 1881511523346346799}
-  speed: 5
+  control: {fileID: 0}
+  speed: 0
   PlayerNumber: 2
 --- !u!114 &5874022337594065812
 MonoBehaviour:
@@ -145,34 +143,3 @@ MonoBehaviour:
   PetalTruck: {fileID: 2272083673370379170, guid: 69abe57b27c9b74408148c8c6979228f,
     type: 3}
   PlayerNumber: 2
---- !u!65 &-3914852655078246279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378296556302739264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.65, z: 1.55}
-  m_Center: {x: -0.03, y: 0.32, z: 0}
---- !u!143 &1881511523346346799
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378296556302739264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.3
-  m_SlopeLimit: 45
-  m_StepOffset: 0
-  m_SkinWidth: 0.1
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.5, z: 0}

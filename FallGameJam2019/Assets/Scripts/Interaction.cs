@@ -25,7 +25,7 @@ public class Interaction : MonoBehaviour
         if (Input.GetButtonDown("P"+PlayerNumber+"Interact")){
             if (child == null)
             {
-                interactables = GameObject.FindGameObjectsWithTag("Petal");
+                interactables = GameObject.FindGameObjectsWithTag("Interactable");
 
                 closest = interactables[0];
 
