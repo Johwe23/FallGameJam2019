@@ -7,12 +7,9 @@ public class Flower : MonoBehaviour
 
     public GameObject petal;
 
-    public double angle = 60;
-    public int compostDropped = 0;
-
     int level = 1;
 
-    public double secondsUntilDropsCompost = 10;
+    public double secondsUntilDropsPetal = 10;
     double minimumWaitTime = 10, subractWaitTimePerLevel = 2;
     //const int seconds
 
@@ -25,15 +22,14 @@ public class Flower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        secondsUntilDropsCompost -= Time.deltaTime;
+        secondsUntilDropsPetal -= Time.deltaTime;
 
-        if(secondsUntilDropsCompost <= 0)
+        if(secondsUntilDropsPetal <= 0)
         {
             var p = Instantiate(petal, transform.position + new Vector3(0, 1, 0), new Quaternion(1, 1, 1, 1));
             p.transform.parent = gameObject.transform;
-            secondsUntilDropsCompost += minimumWaitTime - level * subractWaitTimePerLevel;
+            secondsUntilDropsPetal += minimumWaitTime - level * subractWaitTimePerLevel;
         }
 
     }
-
 }

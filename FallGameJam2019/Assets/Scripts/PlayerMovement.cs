@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController control;
-
-    public float speed;
-    float yRotation = 0f;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +13,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxisRaw ("Horizontal");
-        float moveVertical = Input.GetAxisRaw ("Vertical");
+        transform.Translate(new Vector3(Input.GetAxis("Horizontal") * 1000, 0, 0));
 
-        control.SimpleMove(new Vector3(speed * moveHorizontal, 0, speed * moveVertical));
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        Debug.Log(Input.GetAxis("Horizontal"));
         
-        if(movement.sqrMagnitude > 0.05){
-            transform.rotation = Quaternion.LookRotation(movement);
-        }
+        
     }
 }
