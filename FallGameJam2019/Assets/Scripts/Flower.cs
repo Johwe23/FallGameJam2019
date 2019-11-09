@@ -6,17 +6,24 @@ public class Flower : MonoBehaviour
 {
 
     public GameObject petal;
+    public Color color;
 
-    int level = 1;
+    int level = 0;
+    int maxLevel = 8;
+    int maxDropppedPetals = 8;
 
-    public double secondsUntilDropsPetal = 10;
+    
     double minimumWaitTime = 10, subractWaitTimePerLevel = 2;
+    double secondsUntilDropsPetal;
+    float nextDropAngle = 0;
+    float dropDistance = 0.5f;
     //const int seconds
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        upgrade();
+        secondsUntilDropsPetal = minimumWaitTime;
     }
 
     // Update is called once per frame
@@ -26,10 +33,27 @@ public class Flower : MonoBehaviour
 
         if(secondsUntilDropsPetal <= 0)
         {
-            var p = Instantiate(petal, transform.position + new Vector3(0, 1, 0), new Quaternion(1, 1, 1, 1));
+            Quaternion rotation = Quaternion.Euler(0, nextDropAngle/(2* Mathf.PI)*360 - 90, 0);
+
+            var p = Instantiate(petal, transform.position + new Vector3(Mathf.Sin(nextDropAngle)*dropDistance, 0, Mathf.Cos(nextDropAngle)*dropDistance), rotation);
+            p.GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
             p.transform.parent = gameObject.transform;
+
+            nextDropAngle += Mathf.PI*2/maxDropppedPetals;
             secondsUntilDropsPetal += minimumWaitTime - level * subractWaitTimePerLevel;
         }
 
+    }
+
+    public void upgrade(){
+        
+        level++;
+        float angle = (float)(level)/(float)(maxLevel) * 360;
+
+        Quaternion rotation = Quaternion.Euler(0, angle, 0);
+        
+        var p = Instantiate(petal, transform.position + new Vector3(0, 0.5f, 0), rotation);
+        p.GetComponentInChildren<Renderer>().material.SetColor("_Color", color);
+        p.transform.parent = gameObject.transform;
     }
 }
