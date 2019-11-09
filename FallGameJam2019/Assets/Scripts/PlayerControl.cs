@@ -6,10 +6,11 @@ public class PlayerControl : MonoBehaviour
 {
     //CharacterController characterController;
 
-    public CharacterController cont;
+    //public CharacterController cont;
+    CharacterController CharacterController;
 
-    public float speed = 6.0f;
-    
+    public float speed;
+    float yRotation = 0f;
     
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,14 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
 
-        cont.SimpleMove(new Vector3(speed * Input.GetAxis("Horizontal"), 0, speed * Input.GetAxis("Vertical")));
-        //print(Input.GetAxis("Horizontal"));
-        Vector2 facing = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).Angle; 
-        transform.eulerAngles = (0f, facing, 0f);
+        //cont.SimpleMove(new Vector3(speed * Input.GetAxis("Horizontal"), 0, speed * Input.GetAxis("Vertical")));
+        CharacterController.SimpleMove(new Vector3(speed * Input.GetAxis("Horizontal"), 0, speed * Input.GetAxis("Vertical")));
+        
+
+        float moveHorizontal = Input.GetAxisRaw ("Horizontal");
+        float moveVertical = Input.GetAxisRaw ("Vertical");
+        
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        transform.rotation = Quaternion.LookRotation(movement);
     }
 }
