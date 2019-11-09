@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8325071068454923134
+--- !u!1001 &2321340101112986202
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3378296556302739264, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_Name
-      value: Petal 1
+      value: Pallkrage
       objectReference: {fileID: 0}
     - target: {fileID: 5427948743174369420, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
@@ -67,31 +67,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1787970717314293154, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1787970717314293154, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1787970717314293154, guid: 681d25427f0790741aeb525352570ed1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8220713427552316508, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2432090755550338912, guid: 8958e018b3f6ec947a239839217690de,
+      objectReference: {fileID: -2432090755550338912, guid: 0ebb5839d96d2114e8cda7ebf68d508b,
         type: 3}
     - target: {fileID: 4101867268356371646, guid: 681d25427f0790741aeb525352570ed1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 414ef34a2297b024caba2dc97a1711d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 364369078a09c0742b90d2e4f5aeb4e4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681d25427f0790741aeb525352570ed1, type: 3}
