@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Composter : MonoBehaviour
 {
-    public double CountDownTime = 5f;
+    public double CountDownTime = 4f;
     public double timer = -1f;
     public RectTransform timeBar;
 
@@ -47,6 +47,7 @@ public class Composter : MonoBehaviour
 
         if(petals.Count == 0){
             timer = -1;
+            timeBar.sizeDelta = new Vector2(20, (float)(timer/CountDownTime)*50);
             return;
         }
 
