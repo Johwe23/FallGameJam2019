@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909871092}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.22293545}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.0258805}
   m_Children:
   - {fileID: 1406637163}
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.0198345, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &909871096
@@ -126,7 +126,7 @@ RectTransform:
   m_GameObject: {fileID: 1406637162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 909871093}
   m_RootOrder: 0
@@ -301,6 +301,10 @@ MonoBehaviour:
   control: {fileID: 824904457354431891}
   speed: 5
   PlayerNumber: 2
+  maxDashTime: 0.1
+  dashSpeed: 15
+  Source: {fileID: 0}
+  Sound: {fileID: 0}
 --- !u!143 &824904457354431891
 CharacterController:
   m_ObjectHideFlags: 0
@@ -352,3 +356,7 @@ MonoBehaviour:
   CompostTruck: {fileID: 554430066632872308, guid: 342488aa268c30945867d22619e1e24d,
     type: 3}
   PlayerNumber: 2
+  taupp: {fileID: 0}
+  uppsource: {fileID: 0}
+  nersource: {fileID: 0}
+  taner: {fileID: 0}

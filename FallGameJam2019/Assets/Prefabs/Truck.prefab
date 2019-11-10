@@ -26,8 +26,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531171478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 750266690}
   m_RootOrder: 0
@@ -301,6 +301,10 @@ MonoBehaviour:
   control: {fileID: 824904457354431891}
   speed: 5
   PlayerNumber: 1
+  maxDashTime: 0.1
+  dashSpeed: 15
+  Source: {fileID: 0}
+  Sound: {fileID: 0}
 --- !u!143 &824904457354431891
 CharacterController:
   m_ObjectHideFlags: 0
@@ -352,3 +356,7 @@ MonoBehaviour:
   CompostTruck: {fileID: 554430066632872308, guid: 342488aa268c30945867d22619e1e24d,
     type: 3}
   PlayerNumber: 1
+  taupp: {fileID: 0}
+  uppsource: {fileID: 0}
+  nersource: {fileID: 0}
+  taner: {fileID: 0}
