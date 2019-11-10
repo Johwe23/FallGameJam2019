@@ -8,6 +8,11 @@ public class PlayerMovement : MonoBehaviour
     //public Plane other;
     public float speed;
     public string PlayerNumber;
+    public float maxDashTime = 1.0f;      ////
+    //public float dashDistance = 10;
+    //public float dashStoppingSpeed = 0.1f;
+    float currentDashTime = 0;
+    public float dashSpeed = 6;                        ////
 
     float yRotation = 0f;
 
@@ -25,26 +30,52 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        if ((transform.position.x < Plane.offset) && PlayerNumber == "1"){              // slow on right
+        if ((transform.position.x < Plane.offset) && PlayerNumber == "1"){              // fast on left
             control.SimpleMove(speed * movement.normalized);
-        } else if ((transform.position.x > Plane.offset) && PlayerNumber == "2") {      // slow on left
+            if(Input.GetButtonDown("P" + PlayerNumber + "Dash")){
+                currentDashTime = 0;
+                //Dash(movement.normalized);
+            }
+        } else if ((transform.position.x > Plane.offset) && PlayerNumber == "2") {      // fast on right
             control.SimpleMove(speed * movement.normalized);
+            if(Input.GetButtonDown("P" + PlayerNumber + "Dash")){
+                currentDashTime = 0;
+                //Dash(movement.normalized);
+            }
         } else {
             control.SimpleMove(0.5f * speed * movement.normalized);
         }
         print("Plane offset: " + Plane.offset);
 
+        if(currentDashTime < maxDashTime) {
+                    control.SimpleMove(dashSpeed * movement.normalized);
+                    currentDashTime += Time.deltaTime;
+                }
+
         if(movement.sqrMagnitude > 0){
             transform.rotation = Quaternion.LookRotation(movement);
-        }
-
-        if(Input.GetButtonDown("P" + PlayerNumber + "Dash")){
-            Dash(movement.normalized);
         }
     }
     void Dash(Vector3 direction)
     {
-        control.SimpleMove(10 * speed * direction);
+        currentDashTime = 0;
+        while(currentDashTime < maxDashTime) {
+            control.SimpleMove(dashSpeed * direction);
+            currentDashTime += Time.deltaTime;
+        }
+        /*
+        if (Input.GetButtonDown(KeyCode.Z)){
+            currentDashTime = 0.0f;
+        }
+
+        if (currentDashTime < MaxDashTime){
+            moveDirection = new vector3(0, 0, dashSpeed);
+            currentDashTime += dashStoppingSpeed;
+        } else {
+            moveDirection = vector3.zero;
+        }
+        control.Move(direction*Time.deltaTime); ////
+        */
     }
     
 }
