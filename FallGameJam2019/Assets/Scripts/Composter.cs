@@ -7,7 +7,7 @@ public class Composter : MonoBehaviour
     public double CountDownTime = 10;
     public double timer = -1;
 
-    private Color yellow = new Color(1, 1, 0, 1), blue = new Color(0, 0, 1, 1), red = new Color(1, 0, 0, 1);
+    private Color yellow = new Color(1, 1, 0, 1);
 
     public GameObject compost;
 
@@ -67,15 +67,10 @@ public class Composter : MonoBehaviour
         Color color1 = petals[0].GetComponentInChildren<Renderer>().material.color;
         Color cColor = color1;
 
-        print(color1 + "  " + yellow + "   " + (color1 == yellow));
-
         if(petals.Count > 1){
-
-            print("Mixing colors");
             
             
             Color color2 = petals[1].GetComponentInChildren<Renderer>().material.color;
-            print(color2 + "  " + yellow + "   " + (color2 == yellow));
 
             if(color1 == Color.blue && color2 == Color.red || color2 == Color.blue && color1 == Color.red){
                 cColor = new Color(0.682127f, 0, 1, 1);
