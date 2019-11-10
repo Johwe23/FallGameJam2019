@@ -39,7 +39,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2206839875433639317}
-  m_Mesh: {fileID: -2432090755550338912, guid: ea3ecaa2a0bfceb449173be5ca6c202d, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: ec07e84536442ff4fb0ee0347813a2f3, type: 3}
 --- !u!23 &4950368535727660516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c208f3e911031fa4388bcd4946d46a3a, type: 2}
+  - {fileID: 2100000, guid: f6cb95275fe2f5c4093b048f7a637180, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7953106685586811487}
   - component: {fileID: 122939735591552493}
   m_Layer: 0
-  m_Name: Truck
+  m_Name: Snow_Truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 824904457354431891}
   speed: 5
-  PlayerNumber: 1
+  PlayerNumber: 2
 --- !u!143 &824904457354431891
 CharacterController:
   m_ObjectHideFlags: 0
@@ -178,4 +178,4 @@ MonoBehaviour:
   Compost: {fileID: 8477210812598919950, guid: 695ce63ddedd74d4f8633431840a073d, type: 3}
   CompostTruck: {fileID: 554430066632872308, guid: 342488aa268c30945867d22619e1e24d,
     type: 3}
-  PlayerNumber: 1
+  PlayerNumber: 2
