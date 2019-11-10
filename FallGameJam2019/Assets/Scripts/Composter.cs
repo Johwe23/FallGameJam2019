@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Composter : MonoBehaviour
 {
-    public double CountDownTime = 10f;
+    public double CountDownTime = 5f;
     public double timer = -1f;
     public RectTransform timeBar;
 

@@ -13,7 +13,7 @@ public class Flower : MonoBehaviour
     int maxDropppedPetals = 8;
 
     
-    double minimumWaitTime = 5, subractWaitTimePerLevel = 2;
+    double minimumWaitTime = 20, subractWaitTimePerLevel = 2;
     double secondsUntilDropsPetal;
     float nextDropAngle = 0;
     float dropDistance = 0.5f;
@@ -23,7 +23,7 @@ public class Flower : MonoBehaviour
     void Start()
     {
         upgrade();
-        secondsUntilDropsPetal = minimumWaitTime;
+        secondsUntilDropsPetal = 6;
 
         color1 = ColorUtility.ToHtmlStringRGBA(color);
     }

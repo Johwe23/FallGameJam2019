@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tree : MonoBehaviour
 {
 
+    public int player;
     Color[] colors = {
         Color.red,
         Color.blue, 
@@ -43,6 +44,11 @@ public class Tree : MonoBehaviour
 
     private void upgrade(){
         transform.localScale = transform.localScale * 1.1f;
+        if(player == 1)
+            Plane.offset += 0.5f;
+        else{
+            Plane.offset -= 0.5f;
+        }
         changeColor();
     }
 }
