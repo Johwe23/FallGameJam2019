@@ -32,6 +32,24 @@ public class Composter : MonoBehaviour
             timeBar.sizeDelta = new Vector2(20, (float)(timer/CountDownTime)*50);
         }
 
+        Collider collider =  gameObject.GetComponent<Collider>();
+        Collider[] hitColliders = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents);
+
+        List<GameObject> petals = new List<GameObject>();
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            if(hitColliders[i].gameObject.tag == "Petal"){
+                petals.Add(hitColliders[i].gameObject);
+            }
+            i++;
+        }
+
+        if(petals.Count == 0){
+            timer = -1;
+            return;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other){
