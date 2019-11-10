@@ -24,6 +24,7 @@ public class Flower : MonoBehaviour
     {
         upgrade();
         secondsUntilDropsPetal = minimumWaitTime;
+        
     }
 
     // Update is called once per frame
