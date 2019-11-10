@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class Composter : MonoBehaviour
 {
-    public double CountDownTime = 10f;
-    public double timer = -1f;
+    public double CountDownTime = 4;
+    public double timer = -1;
     public RectTransform timeBar;
-
     private Color yellow = new Color(1, 1, 0, 1);
 
     public GameObject compost;
