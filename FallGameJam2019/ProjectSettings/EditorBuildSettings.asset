@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 216cc9971e420f94d8fd007f900b864b
+  - enabled: 1
+    path: Assets/Scenes/BorderMovement.unity
+    guid: 437ecb73da44d704eac2f159a57c9a17
   m_configObjects: {}
