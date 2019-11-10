@@ -671,6 +671,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6757217113604723972, guid: a21830bef0b654947b6af3c9b63c069c,
+        type: 3}
+      propertyPath: maxDashTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757217113604723972, guid: a21830bef0b654947b6af3c9b63c069c,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21830bef0b654947b6af3c9b63c069c, type: 3}
 --- !u!1001 &526653214
@@ -1358,7 +1368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Offset: '
+  m_Text: 'Offset: N/A'
 --- !u!222 &806472218
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1433,6 +1443,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757217113604723972, guid: 963e6e47d36d43946a238ca770c36a01,
+        type: 3}
+      propertyPath: maxDashTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757217113604723972, guid: 963e6e47d36d43946a238ca770c36a01,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 909871093, guid: 963e6e47d36d43946a238ca770c36a01, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2845,7 +2865,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER
+  m_Text: '
+
+'
 --- !u!222 &2060161028
 CanvasRenderer:
   m_ObjectHideFlags: 0
