@@ -13,7 +13,7 @@ public class Flower : MonoBehaviour
     int maxDropppedPetals = 8;
 
     
-    double minimumWaitTime = 20, subractWaitTimePerLevel = 2;
+    double minimumWaitTime = 30, subractWaitTimePerLevel = 3;
     double secondsUntilDropsPetal;
     float nextDropAngle = 0;
     float dropDistance = 0.5f;
