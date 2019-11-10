@@ -6,6 +6,9 @@ public class Tree : MonoBehaviour
 {
 
     public int player;
+
+    public static float offsetIncreasePerTurn = 0.05f;
+    public static float offsetIncrease = 0.5f;
     Color[] colors = {
         Color.red,
         Color.blue, 
@@ -45,11 +48,13 @@ public class Tree : MonoBehaviour
     private void upgrade(){
 
         if(player == 1){
-            Plane.offset += 0.5f;
+            Plane.offset += offsetIncrease;
         }
         else{
-            Plane.offset -= 0.5f;
+            Plane.offset -= offsetIncrease;
         }
+
+        offsetIncrease += offsetIncreasePerTurn;
 
         GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
 
