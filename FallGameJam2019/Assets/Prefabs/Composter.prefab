@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountDownTime: 5
   timer: 0
-  compost: {fileID: 2018642101411274565, guid: 0ffe739abcbb4b543899499e13e0c48f, type: 3}
+  compost: {fileID: 8477210812598919950, guid: 695ce63ddedd74d4f8633431840a073d, type: 3}
 --- !u!65 &3192570969493470032
 BoxCollider:
   m_ObjectHideFlags: 0
