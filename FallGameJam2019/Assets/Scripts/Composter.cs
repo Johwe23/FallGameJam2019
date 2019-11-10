@@ -44,7 +44,7 @@ public class Composter : MonoBehaviour
 
     private void makeCompost(){
 
-        GameObject c = Instantiate(compost, transform.position + new Vector3(0.9f, 0.074f, -0.855f), new Quaternion(0, 0, 0, 1));
+        GameObject c = Instantiate(compost, transform.position + transform.rotation * new Vector3(-0.85f, 0, 0.855f), new Quaternion(0, 0, 0, 1));
 
         Collider collider =  gameObject.GetComponent<Collider>();
         Collider[] hitColliders = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents);

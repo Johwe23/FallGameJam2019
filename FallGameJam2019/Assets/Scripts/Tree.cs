@@ -43,12 +43,30 @@ public class Tree : MonoBehaviour
     }
 
     private void upgrade(){
-        transform.localScale = transform.localScale * 1.1f;
-        if(player == 1)
+
+        if(player == 1){
             Plane.offset += 0.5f;
+        }
         else{
             Plane.offset -= 0.5f;
         }
+
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
+
+        foreach(GameObject tree in trees){
+            tree.GetComponent<Tree>().updateSize();
+        }
+
+        
         changeColor();
+    }
+
+    public void updateSize(){
+        if(player == 1){
+            transform.localScale = new Vector3(2, 2, 2) * (18 + Plane.offset)/18;
+        }
+        else{
+            transform.localScale = new Vector3(2, 2, 2) * (18 - Plane.offset)/18;
+        }
     }
 }
