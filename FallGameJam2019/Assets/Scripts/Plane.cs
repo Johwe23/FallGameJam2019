@@ -1,25 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Plane : MonoBehaviour
 {
-
-    float offset = 0;
-    Renderer rend;
+    public Text score;
+    public static float offset = 0;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        
     }
 
     void Update()
     {
-        rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        score.text = "Offset: " + offset;
+        
+        if (Input.GetButtonDown("P1Interact")) {
+            move(1);
+        } else if (Input.GetButtonDown("P2Interact")) {
+            move(-1);
+        }
     }
 
     public void move(float dist)
     {
         offset += dist;
+        transform.Translate(dist, 0, 0);
     }
+    
 }
