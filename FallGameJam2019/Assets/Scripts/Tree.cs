@@ -20,7 +20,7 @@ public class Tree : MonoBehaviour
     {
         var color1 = ColorUtility.ToHtmlStringRGBA(other.gameObject.GetComponentInChildren<Renderer>().material.color);
         var color2 = ColorUtility.ToHtmlStringRGBA(gameObject.GetComponentInChildren<Renderer>().material.color);
-        print("Entering");
+        
         if (other.gameObject.tag == "Compost" && color1 == color2)
         {
             Destroy(other.gameObject);

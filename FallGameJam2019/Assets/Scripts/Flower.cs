@@ -64,7 +64,6 @@ public class Flower : MonoBehaviour
     {
         var color2 = ColorUtility.ToHtmlStringRGBA(other.gameObject.GetComponentInChildren<Renderer>().material.color);
         if (other.gameObject.tag == "Compost" && color1 == color2) {
-            print("Destroy");
             upgrade();
             Destroy(other.gameObject);
         }

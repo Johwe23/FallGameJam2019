@@ -32,48 +32,49 @@ public class Interaction : MonoBehaviour
             {
                 interactables = GameObject.FindGameObjectsWithTag("Petal");
 
-                closestPetal = interactables[0];
+                if (interactables.Length>0) {
 
-                foreach (GameObject interactable in interactables)
-                {
-                    if ((interactable.transform.position - transform.position).sqrMagnitude < (closestPetal.transform.position - transform.position).sqrMagnitude)
+                    closestPetal = interactables[0];
+
+                    foreach (GameObject interactable in interactables)
                     {
-                        closestPetal = interactable;
+                        if ((interactable.transform.position - transform.position).sqrMagnitude < (closestPetal.transform.position - transform.position).sqrMagnitude)
+                        {
+                            closestPetal = interactable;
+                        }
                     }
                 }
                 interactables = GameObject.FindGameObjectsWithTag("Compost");
-                
-                closestCompost = interactables[0];
 
-                foreach(GameObject interactable in interactables)
+                if (interactables.Length > 0)
                 {
-                    if ((interactable.transform.position - transform.position).sqrMagnitude < (closestCompost.transform.position - transform.position).sqrMagnitude)
+                    closestCompost = interactables[0];
+
+                    foreach (GameObject interactable in interactables)
                     {
-                        closestCompost = interactable;
+                        if ((interactable.transform.position - transform.position).sqrMagnitude < (closestCompost.transform.position - transform.position).sqrMagnitude)
+                        {
+                            closestCompost = interactable;
+                        }
                     }
+
                 }
 
-                if ((closestPetal.transform.position - transform.position).sqrMagnitude < (closestCompost.transform.position - transform.position).sqrMagnitude)
-                {
-
-                    if ((closestPetal.transform.position - transform.position).sqrMagnitude < pickupRange)
+                if (closestPetal == null || closestCompost == null) {
+                    if (closestPetal != null && closestCompost == null) {
+                        pickUp(closestPetal);
+                    } else if (closestPetal == null && closestCompost != null)
                     {
-                        Destroy(closestPetal);
-                        colorOfPickup = closestPetal.GetComponentInChildren<Renderer>().material.color;
-                        child = Instantiate(PetalTruck, transform);
-                        child.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
+                        pickUp(closestCompost);
                     }
+                }
+                else if ((closestPetal.transform.position - transform.position).sqrMagnitude < (closestCompost.transform.position - transform.position).sqrMagnitude)
+                {
+                    pickUp(closestPetal);   
                 }
                 else
                 {
-                    if ((closestCompost.transform.position - transform.position).sqrMagnitude < pickupRange)
-                    {
-                        Destroy(closestCompost);
-                        colorOfPickup = closestCompost.GetComponentInChildren<Renderer>().material.color;
-                        child = Instantiate(CompostTruck, transform);
-                        child.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
-                    }
-
+                    pickUp(closestCompost);
                 }
             }
             else 
@@ -93,6 +94,22 @@ public class Interaction : MonoBehaviour
                     compost.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                 }
             }
+        }
+    }
+
+    private void pickUp(GameObject item) {
+        if ((item.transform.position - transform.position).sqrMagnitude < pickupRange)
+        {
+            colorOfPickup = item.GetComponentInChildren<Renderer>().material.color;
+            if (item.tag == "Petal")
+            {
+                child = Instantiate(PetalTruck, transform);
+            } else if (item.tag == "Compost")
+            {
+                child = Instantiate(CompostTruck,transform);
+            }
+            Destroy(item);
+            child.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
         }
     }
 }
