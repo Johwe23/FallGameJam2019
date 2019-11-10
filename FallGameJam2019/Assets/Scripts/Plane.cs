@@ -16,21 +16,5 @@ public class Plane : MonoBehaviour
     void Update()
     {
         score.text = "Offset: " + offset;
-        transform.position = new Vector3(offset, 0, 0);
-        /* Debugging
-        if (Input.GetButtonDown("P1Interact")) {
-            move(1);
-        } else if (Input.GetButtonDown("P2Interact")) {
-            move(-1);
-        }
-        */
     }
-
-    /*
-    public void move(float dist)
-    {
-        offset += dist;
-        transform.Translate(dist, 0, 0);
-    }
-    */
 }
