@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Composter : MonoBehaviour
 {
     public double CountDownTime = 4;
     public double timer = -1;
-    public RectTransform timeBar;
+
     private Color yellow = new Color(1, 1, 0, 1);
 
     public GameObject compost;
@@ -25,11 +24,10 @@ public class Composter : MonoBehaviour
         if(timer < 0 && timer > -1){
 
             makeCompost();
-            timer = -1f;
+            timer = -1;
         }
         else if(timer > 0){
             timer -= Time.deltaTime;
-            timeBar.sizeDelta = new Vector2(20,((float)timer/(float)CountDownTime)*50);
         }
 
     }
