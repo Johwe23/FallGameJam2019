@@ -18,12 +18,13 @@ public class Flower : MonoBehaviour
     float nextDropAngle = 0;
     float dropDistance = 0.5f;
     //const int seconds
-
+    private string color1;
     // Start is called before the first frame update
     void Start()
     {
         upgrade();
         secondsUntilDropsPetal = minimumWaitTime;
+        color1 = ColorUtility.ToHtmlStringRGBA(color);
     }
 
     // Update is called once per frame
@@ -61,18 +62,11 @@ public class Flower : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Entering");
-        /*if (other.gameObject.tag == "Compost" && other.gameObject.GetComponent<Renderer>().material.color == color) {
+        var color2 = ColorUtility.ToHtmlStringRGBA(other.gameObject.GetComponentInChildren<Renderer>().material.color);
+        if (other.gameObject.tag == "Compost" && color1 == color2) {
             print("Destroy");
             upgrade();
             Destroy(other.gameObject);
-        }*/
-        if (other.gameObject.tag == "Compost") {
-            print("It's Compost");
-        }
-
-        if (other.gameObject.GetComponent<Renderer>().material.color == color) {
-            print("Correct color");
         }
     }
 }
