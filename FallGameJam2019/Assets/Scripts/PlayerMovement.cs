@@ -8,11 +8,11 @@ public class PlayerMovement : MonoBehaviour
     //public Plane other;
     public float speed;
     public string PlayerNumber;
-    public float maxDashTime = 1.0f;      ////
+    public float maxDashTime = 0.1f;      ////
     //public float dashDistance = 10;
     //public float dashStoppingSpeed = 0.1f;
     float currentDashTime = 0;
-    public float dashSpeed = 6;                        ////
+    public float dashSpeed = 15;                        ////
 
     float yRotation = 0f;
 
