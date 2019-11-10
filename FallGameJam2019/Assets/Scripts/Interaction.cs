@@ -91,6 +91,7 @@ public class Interaction : MonoBehaviour
                     Destroy(child);
                     petal = Instantiate(Petal);
                     petal.transform.position = transform.position;
+                    petal.transform.rotation = transform.rotation * Quaternion.Euler(Vector3.up *-90);
                     petal.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                 }
                 else if (child.tag == "Compost")
@@ -98,6 +99,7 @@ public class Interaction : MonoBehaviour
                     Destroy(child);
                     compost = Instantiate(Compost);
                     compost.transform.position = transform.position;
+                    compost.transform.rotation = transform.rotation * Quaternion.Euler(Vector3.up * -90);
                     compost.GetComponentInChildren<Renderer>().material.color = colorOfPickup;
                 }
             }
