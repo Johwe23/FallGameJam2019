@@ -8,18 +8,20 @@ public class PlayerMovement : MonoBehaviour
     //public Plane other;
     public float speed;
     public string PlayerNumber;
-    public float maxDashTime = 1.0f;      ////
+    public float maxDashTime = 0.1f;      ////
     //public float dashDistance = 10;
     //public float dashStoppingSpeed = 0.1f;
     float currentDashTime = 0;
-    public float dashSpeed = 6;                        ////
-
+    public float dashSpeed = 15;                        ////
+    public AudioSource Source;
+    public AudioClip Sound;
     float yRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //other.move(1);                                                                               //#########################################
+        //other.move(1); 
+        Source.clip = Sound;                                                                              //#########################################
     }
 
     // Update is called once per frame
@@ -35,12 +37,15 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetButtonDown("P" + PlayerNumber + "Dash")){
                 currentDashTime = 0;
                 //Dash(movement.normalized);
+                Source.Play();
+
             }
         } else if ((transform.position.x > Plane.offset) && PlayerNumber == "2") {      // fast on right
             control.SimpleMove(speed * movement.normalized);
             if(Input.GetButtonDown("P" + PlayerNumber + "Dash")){
                 currentDashTime = 0;
                 //Dash(movement.normalized);
+                Source.Play();
             }
         } else {
             control.SimpleMove(0.5f * speed * movement.normalized);

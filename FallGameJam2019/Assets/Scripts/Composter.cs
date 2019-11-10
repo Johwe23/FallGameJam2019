@@ -11,11 +11,12 @@ public class Composter : MonoBehaviour
     private Color yellow = new Color(1, 1, 0, 1);
 
     public GameObject compost;
-
+    public AudioClip Sound;
+    public AudioSource Source;
     // Start is called before the first frame update
     void Start()
     {
-
+        Source.clip = Sound;
     }
 
     // Update is called once per frame
@@ -57,8 +58,9 @@ public class Composter : MonoBehaviour
 
         if(other.gameObject.tag == "Petal"){
             timer = CountDownTime;
+            Source.Play();
         }
-
+        
     }
 
     private void makeCompost(){
@@ -97,7 +99,7 @@ public class Composter : MonoBehaviour
                 cColor = new Color(0.682127f, 0, 1, 1);
             }
             else if(color1 == yellow && color2 == Color.red || color2 == yellow && color1 == Color.red){
-                cColor = new Color(1, 0.6249813f, 0, 1);
+                cColor = new Color(1, 0.357038f, 0, 1);
             }
             else if(color1 == yellow && color2 == Color.blue || color2 == yellow && color1 == Color.blue){
                 cColor = Color.green;
