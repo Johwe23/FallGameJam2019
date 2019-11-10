@@ -37,5 +37,14 @@ public class PlayerMovement : MonoBehaviour
         if(movement.sqrMagnitude > 0){
             transform.rotation = Quaternion.LookRotation(movement);
         }
+
+        if(Input.GetButtonDown("P" + PlayerNumber + "Dash")){
+            Dash(movement.normalized);
+        }
     }
+    void Dash(Vector3 direction)
+    {
+        control.SimpleMove(10 * speed * direction);
+    }
+    
 }
