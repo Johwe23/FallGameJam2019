@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Composter : MonoBehaviour
 {
-    List<GameObject> petals = new List<GameObject>();
-
     public double CountDownTime = 10;
     public double timer = -1;
+
+    private Color yellow = new Color(1, 1, 0, 1), blue = new Color(0, 0, 1, 1), red = new Color(1, 0, 0, 1);
 
     public GameObject compost;
 
@@ -33,47 +33,64 @@ public class Composter : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        petals.Add(other.gameObject);
 
-        if(petals.Count == 1){
+        if(other.gameObject.tag == "Petal"){
             timer = CountDownTime;
         }
-    }
-
-    private void OnTriggerExit(Collider other){
-        petals.Remove(other.gameObject);
+        
     }
 
     private void makeCompost(){
 
-
         GameObject c = Instantiate(compost, transform.position + new Vector3(0.9f, 0.074f, -0.855f), new Quaternion(0, 0, 0, 1));
+
+        Collider collider =  gameObject.GetComponent<Collider>();
+        Collider[] hitColliders = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents);
+
+
+        List<GameObject> petals = new List<GameObject>();
+
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            if(hitColliders[i].gameObject.tag == "Petal"){
+                petals.Add(hitColliders[i].gameObject);
+            }
+            i++;
+        }
+
+        if(petals.Count == 0){
+            timer = -1;
+            return;
+        } 
 
         Color color1 = petals[0].GetComponentInChildren<Renderer>().material.color;
         Color cColor = color1;
 
+        print(color1 + "  " + yellow + "   " + (color1 == yellow));
+
         if(petals.Count > 1){
+
+            print("Mixing colors");
+            
             
             Color color2 = petals[1].GetComponentInChildren<Renderer>().material.color;
+            print(color2 + "  " + yellow + "   " + (color2 == yellow));
 
-            
             if(color1 == Color.blue && color2 == Color.red || color2 == Color.blue && color1 == Color.red){
-                cColor = new Color(136, 3, 252);
+                cColor = new Color(0.682127f, 0, 1, 1);
             }
-            else if(color1 == Color.yellow && color2 == Color.red || color2 == Color.yellow && color1 == Color.red){
-                cColor = new Color(252, 152, 3);
+            else if(color1 == yellow && color2 == Color.red || color2 == yellow && color1 == Color.red){
+                cColor = new Color(1, 0.6249813f, 0, 1);
             }
-            else if(color1 == Color.yellow && color2 == Color.blue || color2 == Color.yellow && color1 == Color.blue){
+            else if(color1 == yellow && color2 == Color.blue || color2 == yellow && color1 == Color.blue){
                 cColor = Color.green;
             }
         }
         c.GetComponentInChildren<Renderer>().material.color = cColor;
 
-
-        for(int i = 0; i < petals.Count; i++){
-            GameObject.Destroy(petals[i]);
+        for(int j = 0; j < petals.Count; j++){
+            GameObject.Destroy(petals[j]);
         }
-
-        
     }
 }

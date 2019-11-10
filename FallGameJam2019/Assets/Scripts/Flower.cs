@@ -24,6 +24,7 @@ public class Flower : MonoBehaviour
     {
         upgrade();
         secondsUntilDropsPetal = minimumWaitTime;
+
         color1 = ColorUtility.ToHtmlStringRGBA(color);
     }
 
