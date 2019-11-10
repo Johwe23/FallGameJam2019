@@ -29,6 +29,7 @@ public class Composter : MonoBehaviour
         }
         else if(timer > 0){
             timer -= Time.deltaTime;
+            timeBar.sizeDelta = new Vector2(20, (float)(timer/CountDownTime)*50);
         }
 
     }
