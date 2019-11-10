@@ -17,11 +17,11 @@ public class Plane : MonoBehaviour
     {
         score.text = "Offset: " + offset;
         
-        if (Input.GetButtonDown("P1Interact")) {
+        /*if (Input.GetButtonDown("P1Interact")) {
             move(1);
         } else if (Input.GetButtonDown("P2Interact")) {
             move(-1);
-        }
+        }*/
     }
 
     public void move(float dist)

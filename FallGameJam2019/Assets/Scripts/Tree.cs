@@ -43,6 +43,7 @@ public class Tree : MonoBehaviour
 
     private void upgrade(){
         transform.localScale = transform.localScale * 1.1f;
+        Plane.offset += 10;
         changeColor();
     }
 }
