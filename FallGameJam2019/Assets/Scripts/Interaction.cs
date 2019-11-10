@@ -18,10 +18,16 @@ public class Interaction : MonoBehaviour
     private GameObject petal;
     private GameObject compost;
     public string PlayerNumber;
+
+    public AudioClip taupp;
+    public AudioSource uppsource;
+    public AudioSource nersource;
+    public AudioClip taner;
     // Start is called before the first frame update
     void Start()
     {
-        
+        uppsource.clip = taupp;
+        nersource.clip = taner;
     }
 
     // Update is called once per frame
@@ -79,6 +85,7 @@ public class Interaction : MonoBehaviour
             }
             else 
             {
+                nersource.Play();
                 if (child.tag == "Petal")
                 {
                     Destroy(child);
@@ -100,6 +107,7 @@ public class Interaction : MonoBehaviour
     private void pickUp(GameObject item) {
         if ((item.transform.position - transform.position).sqrMagnitude < pickupRange)
         {
+            uppsource.Play();
             colorOfPickup = item.GetComponentInChildren<Renderer>().material.color;
             if (item.tag == "Petal")
             {

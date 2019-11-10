@@ -17,10 +17,15 @@ public class Tree : MonoBehaviour
         new Color(0.682127f, 0, 1, 1), //purple
         new Color(1, 0.6249813f, 0, 1), //Orange
     };
+    public AudioClip upsound;
+    public AudioSource Source;
+
     // Start is called before the first frame update
     void Start()
     {
         changeColor();
+        Source.clip = upsound;
+        
     }
 
     // Update is called once per frame
@@ -38,6 +43,7 @@ public class Tree : MonoBehaviour
         {
             upgrade();
             Destroy(other.gameObject);
+            Source.Play();
         }
     }
 
