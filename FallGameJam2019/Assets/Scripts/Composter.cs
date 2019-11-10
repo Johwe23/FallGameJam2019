@@ -6,6 +6,7 @@ public class Composter : MonoBehaviour
 {
     public double CountDownTime = 4;
     public double timer = -1;
+    public RectTransform timeBar;
 
     private Color yellow = new Color(1, 1, 0, 1);
 
@@ -14,7 +15,7 @@ public class Composter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class Composter : MonoBehaviour
         if(other.gameObject.tag == "Petal"){
             timer = CountDownTime;
         }
-        
+
     }
 
     private void makeCompost(){
@@ -62,14 +63,14 @@ public class Composter : MonoBehaviour
         if(petals.Count == 0){
             timer = -1;
             return;
-        } 
+        }
 
         Color color1 = petals[0].GetComponentInChildren<Renderer>().material.color;
         Color cColor = color1;
 
         if(petals.Count > 1){
-            
-            
+
+
             Color color2 = petals[1].GetComponentInChildren<Renderer>().material.color;
 
             if(color1 == Color.blue && color2 == Color.red || color2 == Color.blue && color1 == Color.red){
