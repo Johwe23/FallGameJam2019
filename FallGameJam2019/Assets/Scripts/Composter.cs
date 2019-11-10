@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Composter : MonoBehaviour
 {
-    public double CountDownTime = 4;
-    public double timer = -1;
+    public double CountDownTime = 10f;
+    public double timer = -1f;
     public RectTransform timeBar;
 
     private Color yellow = new Color(1, 1, 0, 1);
