@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Composter : MonoBehaviour
 {
-    public double CountDownTime = 10;
+    public double CountDownTime = 4;
     public double timer = -1;
 
     private Color yellow = new Color(1, 1, 0, 1);

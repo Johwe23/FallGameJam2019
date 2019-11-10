@@ -13,6 +13,8 @@ public class Tree : MonoBehaviour
         new Color(0.682127f, 0, 1, 1), //purple
         new Color(1, 0.6249813f, 0, 1), //Orange
     };
+
+    public int player;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,13 @@ public class Tree : MonoBehaviour
 
     private void upgrade(){
         transform.localScale = transform.localScale * 1.1f;
+        if(player == 1){
+            Plane.offset += 0.5f;
+        }
+        else{
+            Plane.offset -= 0.5f;
+        }
+
         changeColor();
     }
 }
